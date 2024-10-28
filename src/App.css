@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Full-page background */
+/* body, html {
+ 
+  margin: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: Arial, sans-serif;
+  color: #f0f0f0;
+ 
+  background: #513737;
+} */
+
+/* Aurora Background Animation */
+/* Full-page aurora background */
+.aurora-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(120deg, #002b36, #073642, #3b3c91, #6d4ba0, #073642, #002b36);
+  background-size: 400% 400%;
+  animation: auroraMovement 30s ease-in-out infinite;
+  z-index: -1; /* Place it behind all content */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes auroraMovement {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Centered, opaque form styling */
+.container {
+  margin-top: 100px;
+  width: 40%; /* Adjust width as desired */
+  margin: 5% 30%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.399); /* Opaque dark color */
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  /* color: #fff; */
+  background: linear-gradient(to right, white, rgb(89, 89, 89));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+input, select, button {
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 50px;
+  color: #f0f0f0;
+  background-color: #00000069;
+}
+
+button {
+  border: 1px solid gray;
+  background-color: #00000053;
+  font-weight: bold;
+}
+
+.subject-list {
+  margin-top: 20px;
+  padding: 10px;
+  list-style: none;
+  color: #e6e6e6;
+  background-color: rgba(0, 0, 0, 0.435); /* Matching opaque dark color */
+  border-radius: 10px;
+}
+h3{
+  /* color: #fff; */
+  background: linear-gradient(to right, white, rgb(89, 89, 89));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+label{
+  color: #fff;
+}
+h4{
+  /* color: #fff; */
+  background: linear-gradient(to right, white, rgb(89, 89, 89));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@media only screen and (max-width: 500px){
+  .container{
+    width: 70%;
+    margin: 5% 10%;
   }
 }
